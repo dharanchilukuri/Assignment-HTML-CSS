@@ -13,92 +13,215 @@ html {
     font-size: 62.5%;
     scroll-behavior: smooth;
     box-sizing: border-box;
-}
-
-body {
-    font-size: 1.6rem;
-        background-color: #bac6d3;
-
-}
-
-#navbar{
-    padding:1.5rem;
-    border-bottom: 1px solid blue;
-    display:flex;
-    /* background-color: red; */
     
 }
 
-#nav-list{
-    display:flex;
-    justify-content: space-evenly;
-    margin:0 20rem;
-    flex-grow: 1;
-    align-items: center;
-    list-style: none;
+/* 1200px / 16px = 75em */
+@media (max-width: 75em) {
+    html {
+      font-size: 60%;
+    }
+  }
+  
+  /* 980px / 16px = 61.25em */
+  @media (max-width: 61.25em) {
+    html {
+      font-size: 58%;
+    }
+  }
+  
+  /* 460px / 16px = 28.75em */
+  @media (max-width: 28.75em) {
+    html {
+      font-size: 55%;
+    }
+  }
 
-    /* background-color: pink; */
+body {
+    font-size: 1.6rem;
+}
+
+#navbar{
+    border-bottom: 1px solid blue;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+ul{
+    margin-left:4rem;
 }
 
 ul a{
     text-decoration: none;
-    font-size: 1.8rem;
+    font-size: 2rem;
+    margin:0 2rem;
     font-weight: 600;
     color: #312b2b;
     letter-spacing: 0.1rem;
     }
 
+    li{
+        list-style-type: none;
+        display: inline;
+    }
+
+    #navbar .logo{
+    width:7rem;
+    display: inline-block;
+    }
+
 .socialtop{
-    margin-right:4rem;
-    display:flex;
-    align-items:center;
+    margin-right:6rem;
+    display:flex;  
 }
 
 .icons {
-    margin-right:2rem;
+    margin-right:1rem;
+}
+
+
+
+.fa-whatsapp{
+    border-radius: 50%;
+    padding: 0.25rem 0.35rem 0.3rem 0.5rem;
+
+    border:1px solid black;
+}
+
+.fa-facebook-f{
+    border-radius: 50%;
+    padding: 0.325rem 0.625rem;
+
+    border:1px solid black;
 }
 
 
 #home {
-    height: 100vh;
-    background-color: gray;
+    width:100%;
+    background-color: rgb(167, 166, 166);
 }
 
-#home img {
+.container1 img {
     height: 75vh;
     width: 100%;
     object-fit: cover;
     object-position: center 40%;
+}
+
+.container1{
+    position: relative;
+
+}
+
+.container1::before{
+    content:"Lorem Ipsum";
+    position:absolute;
+    bottom:6vh;
+    left:5.5vw;
+    z-index:10;
+    padding: 1.2rem 11vw;
+    background: linear-gradient(to right, rgba(0,0,0), rgb(118, 116, 116));
+    color:#fff;
+    letter-spacing: 0.2rem;
+    text-align: center;
+    font-size: 2rem;
 
 }
 
 .homecontent{
-    padding:4rem 8rem;
-    display:grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap:12rem;
-    /* background-color: gray; */
+    display:flex;
+    /* flex-wrap: wrap; */
+    text-align: center;
+    padding:4rem 0;
+    }
+
+.homecontent p{
+    max-width:28rem;
+    margin: 0 auto;
 }
 
-#section2{
-    /* background-color: #bac6d3; */
-    height:100vh;
-}
 
 h1{
-    padding:4rem 8rem 0;
-    margin-top:2rem;
+    padding:8rem 8rem 0;
+    font-size:4rem;
+   
 }
 
 img{
     object-fit:cover;
-    width:20rem;
+    width:30rem;
+    display: inline-block;
+}
+
+#section2{
+    background-color: rgb(211, 217, 219);
 }
 
 .gallery{
-    padding:4rem;
-    margin-left:4rem;
     display:grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap:12rem;
+    grid-template-columns: repeat(auto-fit, minmax(210px,1fr));
+    justify-items: center;
+    grid-gap:10rem;  
+    padding:4rem 8rem;
+    width:100%;
+}
+
+.gallery p{
+    padding-top:1rem;
+    
+}
+
+.item2{
+    text-align: center;
+}
+
+
+.item3{
+    text-align: end;
+}
+.gallery button{
+    margin-top:2rem;
+    background-color: black;
+    color:#fff;
+    border: 1px black solid;
+    padding:1rem 4rem;
+}
+figcaption{
+    padding-top:1rem;
+}
+
+
+
+@media screen and (width <= 61.25em){
+
+.homecontent{
+gap:2rem;
+}
+
+.container1::before{
+    padding: 1.2rem 8vw;
+}
+
+.container1 img {
+    height: 65vh;
+    object-position: center 40%;
+}
+.socialtop{
+    margin-right:2rem;
+}
+
+}
+
+@media (max-width: 28.75em) {
+    .homecontent{
+        flex-direction: column;
+    
+    }
+
+    .socialtop{
+        margin-right:1rem;
+    }
+
 }
